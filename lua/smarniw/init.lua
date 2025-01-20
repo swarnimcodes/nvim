@@ -1,4 +1,5 @@
 require("smarniw.options")
 require("smarniw.remaps")
 require("smarniw.lazy")
+require("smarniw.autocommands")
 vim.cmd.colorscheme("tokyonight-night")
