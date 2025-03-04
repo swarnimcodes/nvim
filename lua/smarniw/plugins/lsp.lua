@@ -5,6 +5,8 @@ return {
       servers = {
         lua_ls = {},
         ts_ls = {},
+        jsonls = {},
+        clangd = {},
       },
     },
     config = function(_, opts)

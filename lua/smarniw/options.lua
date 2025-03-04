@@ -23,3 +23,11 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 vim.opt.signcolumn = "yes"
+
+-- Disable diagnostic signs in the sign column
+vim.diagnostic.config({
+  signs = false,
+  update_in_insert = false,
+  -- underline = true, -- Keep underline highlights
+  -- virtual_text = false, -- Disable inline text (already handled by Telescope)
+})

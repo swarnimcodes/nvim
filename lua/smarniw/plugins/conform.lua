@@ -9,7 +9,7 @@ return {
       go = { "gofmt" },
       javascript = { "prettier" },
       typescript = { "prettier" },
-      json = { "jq" },
+      json = { "prettier" },
       css = { "prettier" },
       html = { "prettier" },
     },
