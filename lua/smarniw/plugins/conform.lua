@@ -8,6 +8,8 @@ return {
       python = { "ruff_format" },
       go = { "gofmt" },
       javascript = { "prettier" },
+      javascriptreact = { "prettier" },
+      typescriptreact = { "prettier" },
       typescript = { "prettier" },
       json = { "prettier" },
       css = { "prettier" },
