@@ -1,4 +1,15 @@
--- Remaps
+-- Keymaps
+
+-- open diagnostic floating window
+-- vim.keymap.set("n", "<leader>lk", function()
+--   vim.diagnostic.open_float()
+-- end, { desc = "Show diagnostic in a floating window" })
+
+-- Oil: file based operations as a vim buffer
+vim.keymap.set("n", "-", "<Cmd>Oil<CR>")
+
+-- Exit terminal mode
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 
 -- next and prev in quickfix list
 vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>")

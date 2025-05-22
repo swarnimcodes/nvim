@@ -1,5 +1,5 @@
 return {
-  "echasnovski/mini.move",
+  "echasnovski/mini.surround",
   version = "*",
   opts = {},
 }
