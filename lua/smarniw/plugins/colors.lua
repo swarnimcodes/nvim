@@ -17,10 +17,19 @@
 -- }
 
 -- lua/plugins/rose-pine.lua
+-- return {
+--   "rose-pine/neovim",
+--   name = "rose-pine",
+--   config = function()
+--     vim.cmd("colorscheme rose-pine")
+--   end,
+-- }
+
 return {
-  "rose-pine/neovim",
-  name = "rose-pine",
+  "ellisonleao/gruvbox.nvim",
+  priority = 1000,
+  name = "gruvbox",
   config = function()
-    vim.cmd("colorscheme rose-pine")
+    vim.cmd("colorscheme gruvbox")
   end,
 }
