@@ -45,8 +45,6 @@ return {
     },
     config = function(_, opts)
       vim.diagnostic.config({ float = { border = "rounded" } })
-      local lspconfig = require("lspconfig")
-      local configs = require("lspconfig.configs")
 
       -- Setup global diagnostics
       vim.diagnostic.config(vim.tbl_deep_extend("force", {
@@ -58,25 +56,16 @@ return {
         },
       }, opts.diagnostics))
 
-      -- Register custom LSP servers
-      local custom_servers = {
-        ty = {
-          name = "ty",
-          cmd = { "ty", "server" },
-          filetypes = { "python" },
-          root_dir = lspconfig.util.root_pattern("ty.toml", "pyproject.toml", ".git"),
-          single_file_support = true,
-        },
-      }
+      -- Define custom LSP server: ty
+      vim.lsp.config("ty", {
+        cmd = { "ty", "server" },
+        filetypes = { "python" },
+        root_dir = function(fname)
+          return vim.fs.root(fname, { "ty.toml", "pyproject.toml", ".git" })
+        end,
+      })
 
-      -- custom servers
-      for server_name, server_config in pairs(custom_servers) do
-        if not configs[server_name] then
-          configs[server_name] = { default_config = server_config }
-        end
-      end
-
-      -- builtin servers
+      -- Setup builtin servers
       local default_capabilities = require("blink.cmp").get_lsp_capabilities()
       for server, config in pairs(opts.servers) do
         -- Merge with default capabilities
@@ -86,9 +75,13 @@ return {
         config.flags = config.flags or {}
         config.flags.debounce_text_changes = 150
 
-        lspconfig[server].setup(config)
-        -- config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
-        -- lspconfig[server].setup(config)
+        -- Override the server config if there are custom settings
+        if next(config) ~= nil then
+          vim.lsp.config(server, config)
+        end
+
+        -- Enable the server
+        vim.lsp.enable(server)
       end
 
       -- Keybindings for lsp tasks
