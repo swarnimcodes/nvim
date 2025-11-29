@@ -11,6 +11,9 @@ vim.keymap.set("n", "-", "<Cmd>Oil<CR>")
 -- Exit terminal mode
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 
+-- Clear search highlights
+vim.keymap.set("n", "<Esc><Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights" })
+
 -- next and prev in quickfix list
 vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")
