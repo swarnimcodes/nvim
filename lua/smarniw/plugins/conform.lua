@@ -15,6 +15,7 @@ return {
       json = { "prettier" },
       css = { "prettier" },
       html = { "prettier" },
+      templ = { "templ" },
       astro = { "prettier" },
     },
     format_on_save = {

@@ -41,6 +41,7 @@ return {
         pylsp = {},
         ruff = {},
         ty = {},
+        templ = {},
       },
     },
     config = function(_, opts)
