@@ -24,6 +24,10 @@ vim.opt.splitright = true
 
 vim.opt.signcolumn = "yes"
 
+-- Case insensitive search
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
 -- Disable diagnostic signs in the sign column
 vim.diagnostic.config({
   signs = false,
