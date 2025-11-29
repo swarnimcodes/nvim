@@ -16,7 +16,7 @@ vim.opt.undofile = true
 -- vim.opt.undodir = -- TODO
 
 -- highlight current line
-vim.opt.cursorline = false
+vim.opt.cursorline = true
 
 -- sensible splitting
 vim.opt.splitbelow = true
