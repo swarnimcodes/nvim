@@ -1,9 +1,12 @@
--- return {
---   "folke/tokyonight.nvim",
---   lazy = false,
---   priority = 1000,
---   opts = {},
--- }
+return {
+  "folke/tokyonight.nvim",
+  lazy = false,
+  priority = 1000,
+  opts = {},
+  config = function()
+    vim.cmd([[colorscheme tokyonight]])
+  end,
+}
 
 --  Vague
 -- return {
@@ -34,10 +37,18 @@
 --   end,
 -- }
 
-return {
-  "kvrohit/rasmus.nvim",
-  priority = 1000,
-  config = function()
-    vim.cmd([[colorscheme rasmus]])
-  end,
-}
+-- return {
+--   "kvrohit/rasmus.nvim",
+--   priority = 1000,
+--   config = function()
+--     vim.cmd([[colorscheme rasmus]])
+--   end,
+-- }
+
+-- return {
+--   "rebelot/kanagawa.nvim",
+--   priority = 1000,
+--   config = function()
+--     vim.cmd([[colorscheme kanagawa-dragon]])
+--   end,
+-- }
