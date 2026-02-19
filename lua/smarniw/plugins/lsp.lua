@@ -28,6 +28,7 @@ return {
         },
       },
       servers = {
+        biome = {},
         gopls = {},
         jdtls = {},
         lua_ls = {},
@@ -42,6 +43,7 @@ return {
         ruff = {},
         ty = {},
         templ = {},
+        svelte = {},
       },
     },
     config = function(_, opts)
