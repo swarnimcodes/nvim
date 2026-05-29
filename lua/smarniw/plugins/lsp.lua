@@ -40,7 +40,7 @@ return {
         cssls = {},
         gleam = {},
         hls = {},
-        pylsp = {},
+        basedpyright = {},
         ruff = {},
         ty = {},
         templ = {},
@@ -59,15 +59,6 @@ return {
           prefix = "",
         },
       }, opts.diagnostics))
-
-      -- Define custom LSP server: ty
-      vim.lsp.config("ty", {
-        cmd = { "ty", "server" },
-        filetypes = { "python" },
-        root_dir = function(fname)
-          return vim.fs.root(fname, { "ty.toml", "pyproject.toml", ".git" })
-        end,
-      })
 
       -- Setup builtin servers
       local default_capabilities = require("blink.cmp").get_lsp_capabilities()
