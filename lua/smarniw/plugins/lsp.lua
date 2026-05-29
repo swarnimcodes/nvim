@@ -38,13 +38,11 @@ return {
         rust_analyzer = {},
         tinymist = {},
         cssls = {},
-        gleam = {},
         hls = {},
         basedpyright = {},
         ruff = {},
         ty = {},
         templ = {},
-        svelte = {},
       },
     },
     config = function(_, opts)
